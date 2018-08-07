@@ -1,4 +1,10 @@
 # !/usr/bin/python
+"""
+Creates sample apache style access files.
+
+This takes approx a minute to write 100k rows. 
+"""
+
 import datetime
 import faker
 import numpy
@@ -7,12 +13,6 @@ import time
 
 
 def main():
-    """
-    Creates sample apache style access files
-
-    This takes approx a minute to write 100k rows
-    """
-
     Faker = faker.Faker()
 
     writetime = datetime.datetime.now()
@@ -33,7 +33,7 @@ def main():
 
     browsers = [Faker.chrome, Faker.firefox, Faker.internet_explorer, Faker.opera, Faker.safari]
 
-    for i in range(1, 100000):
+    for i in range(1, 100001):
         increment = datetime.timedelta(seconds=random.randint(1, 30))
         writetime += increment
 
